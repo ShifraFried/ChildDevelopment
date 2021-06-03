@@ -32,8 +32,7 @@ const Password = () => {
         setPassword(tmp);
         passwordValidator(tmp);
     }
-
-
+    
     return <TextField id="outlined-basic" label="password" variant="outlined" type="password" error={valid} onChange={onChangeHandle} helperText={message} />
 }
 export default Password
