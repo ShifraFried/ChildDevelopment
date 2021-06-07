@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { TextField } from '@material-ui/core';
+import {savePassword} from '../../actions/index'
+import { connect } from "react-redux";
 
-
-const Password = () => {
+const Password = (props) => {
 
     const [password, setPassword] = useState('');
     const [valid, setValid] = useState(false);
@@ -19,6 +20,7 @@ const Password = () => {
 
     const passwordValidator = (password) => {
         if (password.length !== 6) {
+            props.savePassword(password);
             setValid(true)
             setMessage('you need enter only 6 chars')
         }
@@ -35,4 +37,10 @@ const Password = () => {
     
     return <TextField id="outlined-basic" label="password" variant="outlined" type="password" error={valid} onChange={onChangeHandle} helperText={message} />
 }
-export default Password
+const mapStateToProps = (state) => {
+    return {
+        password: state.password,
+    };
+  };
+  
+  export default connect(mapStateToProps, { savePassword })(Password);

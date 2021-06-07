@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { TextField } from '@material-ui/core';
 import TextValidator, { ValidatorForm } from 'react-material-ui-form-validator';
 import validator from 'validator'
+import {saveEmail} from '../../actions/index'
+import { connect } from "react-redux";
 
-const Email = () => {
+const Email = (props) => {
 
     const [email, setEmail] = useState('');
     const [valid, setValid] = useState(false);
@@ -20,6 +22,7 @@ const Email = () => {
       
       const emailValidator =(email)=>{
         if (validator.isEmail(email)) {
+            props.saveEmail(email);
             setValid(false)
             setMessage('')
         } 
@@ -37,7 +40,13 @@ const Email = () => {
 
     return <TextField id="outlined-basic" label="email" variant="outlined"  error={valid} onChange={onChangeHandle} helperText={message} />
 
-    
-    
+
 }
-export default Email
+const mapStateToProps = (state) => {
+  return {
+      email: state.email,
+  };
+};
+
+export default connect(mapStateToProps, { saveEmail })(Email);
+

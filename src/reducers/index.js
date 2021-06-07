@@ -2,7 +2,7 @@
 import { combineReducers } from "redux";
 import { firstNameReducers, lastNameReducers, idReducers, emailReducers, passwordReducers, birthDateReducers } from "./logInReducers";
 
-export default combineReducers({
+export default combineReducers ({
     
     firstName: firstNameReducers,
     lastName: lastNameReducers,

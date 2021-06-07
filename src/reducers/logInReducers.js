@@ -9,6 +9,7 @@ const initialState = {
 }
 
 export const firstNameReducers = (state = initialState, action) => {
+    
     if (action.type === "save_firstName") {
         return { ...state, firstName: action.payload };
     }
@@ -16,6 +17,7 @@ export const firstNameReducers = (state = initialState, action) => {
 }
 
 export const lastNameReducers = (state = initialState, action) => {
+    
     if (action.type === "save_lastName") {
         return { ...state, lastName: action.payload };
     }
@@ -52,7 +54,7 @@ export const birthDateReducers = (state = initialState, action) => {
 
 // export const saveAllReducers = (state = initialState, action) => {
 //     if (action.type === "save_all_filed") {
-//         return { ...state, birthDate: action.payload };
+//         return { };
 //     }
 //     return state;
 // }

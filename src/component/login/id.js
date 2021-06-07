@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { TextField } from '@material-ui/core';
+import {saveId} from '../../actions/index'
+import { connect } from "react-redux";
 
-const Id = ()=>{
+const Id = (props)=>{
         const [id, setId] = useState('');
         const [valid, setValid] = useState(false);
         const [message, setMessage] = useState('');
@@ -17,6 +19,7 @@ const Id = ()=>{
     
         const idValidator = (id) => {
             if (id.length !== 9) {
+                props.saveId(id);
                 setValid(true)
                 setMessage('you need enter only 9 chars')
             }
@@ -35,5 +38,10 @@ const Id = ()=>{
         return <TextField id="outlined-basic" label="id" variant="outlined"  error={valid} onChange={onChangeHandle} helperText={message} />
     }
    
-
-export default Id
+    const mapStateToProps = (state) => {
+        return {
+            id: state.id,
+        };
+      };
+      
+      export default connect(mapStateToProps, { saveId })(Id);

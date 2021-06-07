@@ -36,8 +36,8 @@ export const saveBirthDate = (birthDate) => {
 };
 
 // export const saveAllFiled = () => {
-//     return function (dispatch, getState) {
-//         const { login } = getState()
+//     return async function (dispatch, getState) {
+//         const { login } = await getState()
 //         //Validation
 //         //API call -send props
 //         dispatch({ type: "save_all_filed", payload: result.data });
