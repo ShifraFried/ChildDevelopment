@@ -18,12 +18,13 @@ const Id = (props)=>{
         // }, [password]);
     
         const idValidator = (id) => {
+            //regulation 
             if (id.length !== 9) {
-                props.saveId(id);
                 setValid(true)
                 setMessage('you need enter only 9 chars')
             }
             else {
+                props.saveId(id);
                 setValid(false)
                 setMessage('')
             }

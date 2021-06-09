@@ -19,6 +19,7 @@ const Password = (props) => {
     // }, [password]);
 
     const passwordValidator = (password) => {
+        //regulation
         if (password.length !== 6) {
             props.savePassword(password);
             setValid(true)

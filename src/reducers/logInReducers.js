@@ -5,57 +5,29 @@ const initialState = {
     id: "",
     email: "",
     password: "",
-    birthDate: ""
+    birthDate: "",
 }
 
-export const firstNameReducers = (state = initialState, action) => {
-    
-    if (action.type === "save_firstName") {
-        return { ...state, firstName: action.payload };
+
+
+export const userReducer = (state = initialState, action) => {
+
+    switch (action.type) {
+        case "save_firstName":
+            return { ...state, firstName: action.payload };
+        case ("save_lastName"):
+            return { ...state, lastName: action.payload };
+        case ("save_id"):
+            return { ...state, id: action.payload };
+        case ("save_email"):
+            return { ...state, email: action.payload };
+        case ("save_password"):
+            return { ...state, password: action.payload };
+        case ("save_birthDate"):
+            return { ...state, birthDate: action.payload };
+        default:
+            return state;
     }
-    return state;
 }
 
-export const lastNameReducers = (state = initialState, action) => {
-    
-    if (action.type === "save_lastName") {
-        return { ...state, lastName: action.payload };
-    }
-    return state;
-}
-
-export const idReducers = (state = initialState, action) => {
-    if (action.type === "save_id") {
-        return { ...state, id: action.payload };
-    }
-    return state;
-}
-
-export const emailReducers = (state = initialState, action) => {
-    if (action.type === "save_email") {
-        return { ...state, email: action.payload };
-    }
-    return state;
-}
-
-export const passwordReducers = (state = initialState, action) => {
-    if (action.type === "save_password") {
-        return { ...state, password: action.payload };
-    }
-    return state;
-}
-
-export const birthDateReducers = (state = initialState, action) => {
-    if (action.type === "save_birthDate") {
-        return { ...state, birthDate: action.payload };
-    }
-    return state;
-}
-
-// export const saveAllReducers = (state = initialState, action) => {
-//     if (action.type === "save_all_filed") {
-//         return { };
-//     }
-//     return state;
-// }
 
