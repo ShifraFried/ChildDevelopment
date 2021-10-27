@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@material-ui/core';
+// import { Button } from '@material-ui/core';
 import './home.css'
 import { useHistory } from "react-router-dom";
 
@@ -13,19 +13,25 @@ function Home() {
         history.push("/login");
     }
 
-    const signIn = () => {    
-        history.push("/signin");
+    const signUp = () => {    
+        history.push("/signup");
     }
 
 
     return <div className="btn">
-        <Button variant="outlined" color="secondary" onClick={login}>
+        {/* <Button variant="outlined" color="secondary" onClick={signUp}>
             רישום
-        </Button>
+        </Button> */}
+        <button className="signup" onClick={signUp}>
+            הרשמה
+        </button>
+        <button className="login" onClick={login}>
+        התחברות
+        </button>
 
-        <Button variant="outlined" color="secondary" onClick={signIn} >
-            כניסה
-        </Button>
+        {/* <Button variant="outlined" color="secondary" onClick={login} >
+            
+        </Button> */}
     </div>
 }
 

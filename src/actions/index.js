@@ -29,20 +29,19 @@ export const savePassword = (password) => {
     };
 };
 
+export const saveWeightBorn = (weightBorn) => {
+    return function (dispatch) {
+        dispatch({ type: "save_weightBorn", payload: weightBorn });
+    };
+};
 export const saveBirthDate = (birthDate) => {
     return function (dispatch) {
         dispatch({ type: "save_birthDate", payload: birthDate });
     };
 };
+export const saveIdFromMongo = (id) => {
+    return function (dispatch) {
+        dispatch({ type: "save_id_mongo", payload: id });
+    };
+};
 
-// export const saveAllFiled = () => {
-//     return async function (dispatch, getState) {
-//         //  login = await getState();
-//          if(getState().user.firstName != ""){
-//              console.log('firstName', firstName);
-//          }
-//         //Validation
-//         //API call -send props
-//         dispatch({ type: "save_all_filed", payload: getState });
-//     };
-// }; 

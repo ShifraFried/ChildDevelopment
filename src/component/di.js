@@ -3,11 +3,7 @@ import MenuList from '@material-ui/core/MenuList';
 import MenuItem from '@material-ui/core/MenuItem';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
-// import ListItemIcon from '@material-ui/core/ListItemIcon';
 import Typography from '@material-ui/core/Typography';
-// import DraftsIcon from '@material-ui/icons/Drafts';
-// import SendIcon from '@material-ui/icons/Send';
-// import PriorityHighIcon from '@material-ui/icons/PriorityHigh';
 import AttachFileSharpIcon from '@material-ui/icons/AttachFileSharp';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
 
@@ -17,15 +13,16 @@ const useStyles = makeStyles({
     },
 });
 
-export default function TypographyMenu() {
+export default function TypographyMenu({ data }) {
     const classes = useStyles();
 
     return (
-
-        <Paper  className={classes.root}>
+        <Paper className={classes.root}>
             <MenuList ><br />
                 <MenuItem >
-                    <Typography variant="inherit">מידע התפתחותי</Typography>
+                    <Typography variant="inherit">מידע התפתחותי
+                    {data}
+                    </Typography>
                     {/* <ListItemIcon> */}
                     <FastfoodIcon fontSize="small" />
                     {/* </ListItemIcon> */}

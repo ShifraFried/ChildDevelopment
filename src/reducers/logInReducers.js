@@ -6,9 +6,8 @@ const initialState = {
     email: "",
     password: "",
     birthDate: "",
+    _id:"",
 }
-
-
 
 export const userReducer = (state = initialState, action) => {
 
@@ -23,8 +22,13 @@ export const userReducer = (state = initialState, action) => {
             return { ...state, email: action.payload };
         case ("save_password"):
             return { ...state, password: action.payload };
+        case ("save_weightBorn"):
+            return { ...state, weightHistory: action.payload };
         case ("save_birthDate"):
             return { ...state, birthDate: action.payload };
+        case ("save_id_mongo"):
+            return { ...state, _id: action.payload };
+
         default:
             return state;
     }
