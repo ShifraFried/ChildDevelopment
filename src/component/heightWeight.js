@@ -2,12 +2,10 @@ import React, { useState } from 'react';
 import { ServerStyleSheets, TextField } from '@material-ui/core';
 import { Button } from '@material-ui/core';
 import { connect } from 'react-redux';
-import { putWeight, putBornWeight } from "./api/userApi"
+import { putWeight, putBornWeight,logInServer } from "./api/userApi"
 import moment from 'moment'
 import { Link } from 'react-router-dom';
 import { saveFirstName, saveLastName, saveId, saveEmail, savePassword, saveWeightBorn, saveBirthDate, saveIdFromMongo } from '../actions/index'
-
-
 
 function HeightWeight(props) {
 
@@ -16,6 +14,8 @@ function HeightWeight(props) {
 
     const [height, setHeight] = useState(0);
     const [weight, setWeight] = useState(0);
+    const [date, setDate] = useState(Date.now());
+    
     const [weightBorn, setWeightBorn] = useState(0);
 
     const weightValidator = (weight) => {
@@ -48,6 +48,10 @@ function HeightWeight(props) {
         const tmp = e.target.value;
         setWeight(tmp);
         weightValidator(tmp);
+    }
+    const onChanceDate = (e)=>{
+        const tmp = e.target.value;
+        setDate(tmp);
     }
     const onChangeHandleBorn = (e) => {
         const tmp = e.target.value;
@@ -95,25 +99,28 @@ function HeightWeight(props) {
                         alert("OK!! ")
                     }
                 }
-
             }
         }
     }
 
     const putWeightToServer = () => {
-        let age = (moment(new Date()).diff(props.birthDate));
+        let age = (moment(date).diff(props.birthDate));
         if (props.weightBorn.weight && weight) {
-           const user = putWeight(props.id, age, weight);
-            calc(age);
-            alert("HeightWeight")
-           saveInRedux(user);
+           const user = putWeight(props.id, age, weight,date).then((user) => {
+            console.log(user);
+             calc(age);
+             alert("HeightWeight")
+            //  logInServer
+            saveInRedux(user);
+           }).catch((error) => {console.log(error)})
+           
         }
         else if (weight && weightBorn) {
             saveWeightBorn(weightBorn);
             calc(age);
             // let age = (moment(new Date()).diff(props.birthDate));
-           let user= putBornWeight(props.id, age, weight, weightBorn);
-            saveInRedux(user);
+           let user= putBornWeight(props.id, age, weight,date, weightBorn);
+            // saveInRedux(user);
             alert("HeightWeight")
         }
         else {
@@ -127,6 +134,7 @@ function HeightWeight(props) {
             <TextField id="outlined-basic" label="height" variant="outlined" type="number" /><br></br>
             {!props.weightBorn.weight && <div><TextField id="outlined-basic" label="weight born" variant="outlined" type="number" error={valid} onChange={onChangeHandleBorn} helperText={message} /><br /></div>}
             <TextField id="outlined-basic" label="weight" variant="outlined" type="number" error={valid} onChange={onChangeHandle} helperText={message} /><br></br>
+            <TextField id="outlined-basic" label="date" variant="outlined" type="date" onChange={onChanceDate}/><br></br>
             <Button variant="outlined" color="secondary" onClick={putWeightToServer}>חישוב </Button><br></br>
             <Link to="weightHistory">היסטורית הגדילה שלי /</Link>
         </form>
@@ -135,6 +143,7 @@ function HeightWeight(props) {
 
 const mapStateToProps = (({ user }) => {
     console.log(user);
+    console.log(user.weightHistory[0]);
     return { id: user._id, birthDate: user.birthDate, weightBorn: user.weightHistory[0] }
 })
 

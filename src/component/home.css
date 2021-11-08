@@ -2,7 +2,7 @@
 {
     text-align: center
 }
-button{
+/* button{
     position: absolute;
     background: #EFD700;
     box-shadow: -3px 1px 10px rgba(0, 0, 0, 0.12);
@@ -15,7 +15,7 @@ button{
     text-align: right;
 
 color: #000000;
-}
+} */
 .signup{
     width: 187px;
     height: 53px;

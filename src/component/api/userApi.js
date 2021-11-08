@@ -12,7 +12,7 @@ export const signUpServer = (firstName, lastName, id, email, password, weightBor
       id,
       email,
       password,
-      weightHistory: [{ age: 0, weight: weightBorn }],
+      weightHistory: [{ age: 0, weight: weightBorn,date:birthDate }],
       birthDate
     })
   })
@@ -42,19 +42,25 @@ export const logInServer = (id, password) => {
   })
 }
 
-export const putWeight = (id, age, weight) => {
+export const putWeight = (id, age, weight,date) => {
   return new Promise((resolve, reject) => {
     fetch(`http://localhost:3000/putWeight?id=${id}`, {
       method: 'PUT',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json'
-      }, body: JSON.stringify({ age: age, weight: weight }),
+      }, body: JSON.stringify({ age: age, weight: weight ,date:date}),
+    })
+    // .then((res) => {debugger; console.log(res);})
+    .then((res) => {debugger; res.json()})
+    .then((data) => {debugger; resolve(data)})
+    .catch((err) => {
+        reject(err);
     })
   })
 }
 
-export const putBornWeight = (id, age, weight, weightBorn) => {
+export const putBornWeight = (id, age, weight,date, weightBorn) => {
   return new Promise((resolve, reject) => {
     fetch(`http://localhost:3000/putBornWeight?id=${id}`, {
       method: 'PUT',
@@ -63,7 +69,7 @@ export const putBornWeight = (id, age, weight, weightBorn) => {
         'Content-Type': 'application/json'
       }, body: JSON.stringify({
         weightBorn: weightBorn,
-        weightToInsert: { age: age, weight: weight }
+        weightToInsert: { age: age, weight: weight ,date:date}
       }),
     }).then((res) => res.json())
     .then((data) => resolve(data))

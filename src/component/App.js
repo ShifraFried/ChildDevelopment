@@ -9,7 +9,7 @@ import HeightWeight from "./heightWeight.js"
 import WightHistory from "./weightHistory.js"
 import DataExample from "./dataExample.js"
 import Vaccine from "./vaccine.js"
-import ChatBot from "./chatbot/chatBot"
+import ChatBotApp from "./chatBot/cahtBotApp"
 // import Chatbot from 'react-chatbot-kit'
 // import ActionProvider from './chatbot/actionProvider';
 // import MessageParser from './chatbot/messageParser';
@@ -70,7 +70,8 @@ const MenuRoute = () => {
       </Route>
       <Route path="/chatBot" >
         <DevelopmentalInformation />
-        <ChatBot />
+        {/* <ChatBot /> */}
+      <ChatBotApp/>
       </Route>
     </Router>
   )

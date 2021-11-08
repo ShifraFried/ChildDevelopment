@@ -19,8 +19,7 @@ function weightHistory(props) {
     // }
 
     const st = (agePart,str)=>{
-       return `  ${agePart? str+ agePart : ' '}`
-         
+       return `  ${agePart? str+ agePart : ' '}` 
     }
 
 return (
@@ -28,13 +27,15 @@ return (
         <h1>היסטורית הגדילה שלי</h1>
         <table>
             <tr>
-                <td>גיל</td>
+                <td>תאריך מדידה</td>
+                <td>גיל בזמן המדידה</td>
                 <td>משקל</td>
             </tr>
-            {props.weightHistory.map((hWeight) => (
+            {props.weightHistory&&props.weightHistory.map((hWeight) => (
               
                 <tr>
-                    <td>{st(moment.duration(hWeight.age)._data.days,`ימים`)}</td>
+                    <td>{hWeight.date}</td>
+                    <td>{st(moment.duration(hWeight.age)._data.years,`שנים `)+st(moment.duration(hWeight.age)._data.months,`חודשים `)+st(moment.duration(hWeight.age)._data.days,`ימים `)}</td>
                     <td>{hWeight.weight}</td>
                 </tr>
             )
