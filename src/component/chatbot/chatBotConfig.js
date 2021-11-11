@@ -40,7 +40,7 @@ const config = {
       },
       {
         widgetName: "vaccineChatBot",
-        widgetFunc: (props) => <VaccineChatBot />
+        widgetFunc: (props) => <VaccineChatBot {...props}/>
       },
       {
         widgetName: "localStatistics",

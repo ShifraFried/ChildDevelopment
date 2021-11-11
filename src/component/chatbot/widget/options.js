@@ -1,4 +1,5 @@
 const Options = (props) => {
+  console.log("in option");
     return (
       <div className="options">
         <h1 className="options-header">{props.title}</h1>

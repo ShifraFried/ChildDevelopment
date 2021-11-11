@@ -1,14 +1,24 @@
 import React, { useState, useEffect } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
-
 import { getData } from "../data"
-const Statistics = () => {
+import Options from "./options";
+
+
+const Statistics = (props) => {
   const [stats, setStats] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const questionVaccine = [{
+    name: "איזה חיסונים נותנים בכל גיל",
+    // handler: props.actionProvider.handleOptions,
+    handler: props.actionProvider.ageToGetVaccine,
+    id: 1
+  }]
+
+ 
   useEffect(() => {
     const getStats = async () => {
-      const stats = await getData();
+      // const stats = await getData();
 
       // const filteredFlights = flights.filter((item) => item.Status === null);
 
@@ -21,9 +31,7 @@ const Statistics = () => {
   return (
     <div className="stats">
       <div className="column-left">
-        <p>
-          ???
-        </p>
+          <Options options={questionVaccine} {...props} />;
       </div>
 
       <div className="column-right">
