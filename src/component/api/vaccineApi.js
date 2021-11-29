@@ -30,3 +30,15 @@ export const getChildVaccine = (id) => {
       })
     })
   }
+
+  export const getAllVaccine = () => {
+    return new Promise((resolve, reject) => {
+      fetch(`http://localhost:3000/getAllVaccine/`)
+        .then((res) => res.json())
+        .then((data) => resolve(data))
+        .catch((err) => {
+          reject(err);
+        });
+  
+    })
+  }

@@ -1,6 +1,7 @@
 import { createChatBotMessage } from "react-chatbot-kit";
 import Overview from "../chatBot/widget/overview"
 import VaccineChatBot from "./widget/vaccineChatBot";
+import SleepChatBot from "./widget/sleepChatBot";
 import LocalStatistics from "../chatBot/widget/localStatistic";
 import Contact from "../chatBot/widget/contact";
 import MedicineDelivery from "../chatBot/widget/medicineDelivery"
@@ -18,9 +19,9 @@ const config = {
       }
     },
     initialMessages: [
-      createChatBotMessage(
-        "Here's a quick overview of what I can help you with. You can also type in."
-      ),
+      // createChatBotMessage(
+      //   "Here's a quick overview of what I can help you with. You can also type in."
+      // ),
       createChatBotMessage(
         "Here's a quick overview of what I can help you with. You can also type in.",
         {
@@ -43,8 +44,8 @@ const config = {
         widgetFunc: (props) => <VaccineChatBot {...props}/>
       },
       {
-        widgetName: "localStatistics",
-        widgetFunc: (props) => <LocalStatistics />
+        widgetName: "sleepChatBot",
+        widgetFunc: (props) => <SleepChatBot {...props} />
       },
       {
         widgetName: "emergencyContact",

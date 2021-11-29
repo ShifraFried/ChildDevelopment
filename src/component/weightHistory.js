@@ -32,9 +32,8 @@ return (
                 <td>משקל</td>
             </tr>
             {props.weightHistory&&props.weightHistory.map((hWeight) => (
-              
                 <tr>
-                    <td>{hWeight.date}</td>
+                    <td>{hWeight.date.split('T')[0]}</td>
                     <td>{st(moment.duration(hWeight.age)._data.years,`שנים `)+st(moment.duration(hWeight.age)._data.months,`חודשים `)+st(moment.duration(hWeight.age)._data.days,`ימים `)}</td>
                     <td>{hWeight.weight}</td>
                 </tr>

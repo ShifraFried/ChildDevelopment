@@ -1,9 +1,10 @@
 
 export const getData = async () => {
+  console.log("in get data");
     let data = await fetch(
-      `https://www.hpb.health.gov.lk/api/get-current-statistical`
+      `C:/שיפי/פרויקט/project/src/assets/vaccineTable.pdf`
     );
-    data = await data.json();
+    // data = await data.json();
     return data.data;
   };
   

@@ -19,7 +19,7 @@ function DataExample(props) {
 
     return (
         <div>
-            <iframe width="75%" src={viewDocuments("development")} />
+            <iframe width="75%" src={viewDocuments("development") } />
         </div>
     )
 }

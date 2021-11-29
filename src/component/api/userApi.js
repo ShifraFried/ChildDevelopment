@@ -53,6 +53,7 @@ export const putWeight = (id, age, weight,date) => {
     })
     // .then((res) => {debugger; console.log(res);})
     .then((res) => {debugger; res.json()})
+    //data == undefined
     .then((data) => {debugger; resolve(data)})
     .catch((err) => {
         reject(err);

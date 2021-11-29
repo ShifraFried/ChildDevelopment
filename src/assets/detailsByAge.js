@@ -1,12 +1,12 @@
 
-import greenPass from '../assets/GreenPass.pdf'
+import firstMonth from '../assets/firstMonth.pdf'
 import p from '../assets/p.pdf'
 
 export default {
     "1": {
         "text": "less than one month - just born",
         "documents": {
-            "development": greenPass
+            "development": firstMonth
         }
     },
     "2": {

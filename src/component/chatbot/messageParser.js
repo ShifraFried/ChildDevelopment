@@ -17,15 +17,15 @@ class MessageParser {
         return this.actionProvider.handleOptions({ withAvatar: true });
       }
   
+      //ניתן אפשרות של כתיבת טקסט חופשי לגבי השלמת חיסונים
       if (
-        message.includes("talk") ||
-        message.includes("speak") ||
-        message.includes("real person") ||
-        message.includes("call") ||
-        message.includes("emergency") ||
-        message.includes("contact")
+        message.includes("complete") ||
+        message.includes("השלמת חיסונים") ||
+        message.includes("השלמה") ||
+        message.includes("לא קיבלתי חיסון") ||
+        message.includes("לא קיבלתי") 
       ) {
-        return this.actionProvider.handleContact();
+        return this.actionProvider.completeVaccine();
       }
   
       if (
@@ -39,8 +39,9 @@ class MessageParser {
         ];
       }
   
-      if (message.includes("medicine") || message.includes("delivery")) {
-        return this.actionProvider.handleMedicine();
+      if (message.includes("תופעות לוואי") || message.includes("חום ")
+      || message.includes("אודם ")  || message.includes("נפיחות ")) {
+        return this.actionProvider.vaccineSideEffects();
       }
   
       if (
