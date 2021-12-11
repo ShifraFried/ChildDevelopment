@@ -1,6 +1,9 @@
 // import Login from "../login/login"
 import vaccineTable from '../../assets/vaccineTable.pdf'
 // import { getData } from "./data"
+import { BlobProvider, PDFDownloadLink } from '@react-pdf/renderer'
+import { Document, Page, pdfjs } from "react-pdf";
+
 
 class ActionProvider {
 
@@ -9,6 +12,19 @@ class ActionProvider {
         this.setState = setStateFunc;
         this.createClientMessage = createClientMessage;
     }
+    handleOptions = () => {
+        const message = this.createChatBotMessage(
+            "Here's the vaccine information you need.",
+            {
+                widget: "overview",
+                loading: true,
+                terminateLoading: true,
+                withAvatar: true
+            }
+        );
+        this.addMessageToState(message);
+    };
+
 
     handleChatBotVaccine = () => {
         const message = this.createChatBotMessage(
@@ -26,10 +42,12 @@ class ActionProvider {
     ///answer
     ageToGetVaccine = () => {
         const message = this.createChatBotMessage(
-            // <div>
-            <iframe width="75%" src={vaccineTable} />
-            // </div>
-            // { getData }
+            // <iframe width="75%" src={vaccineTable} />
+            <BlobProvider document={vaccineTable}>
+                {() => (
+                    <a href={vaccineTable} target="_blank">Open in new tab</a>
+                )}
+            </BlobProvider>  
         );
 
         this.addMessageToState(message);

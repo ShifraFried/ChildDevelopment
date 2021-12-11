@@ -10,10 +10,8 @@ import WightHistory from "./weightHistory.js"
 import DataExample from "./dataExample.js"
 import Vaccine from "./vaccine.js"
 import ChatBotApp from "./chatBot/cahtBotApp"
-// import Chatbot from 'react-chatbot-kit'
-// import ActionProvider from './chatbot/actionProvider';
-// import MessageParser from './chatbot/messageParser';
-// import config from './chatbot/config';
+import UploadPictures from "./uploadPictures"
+
 
 
 function App() {
@@ -70,8 +68,11 @@ const MenuRoute = () => {
       </Route>
       <Route path="/chatBot" >
         <DevelopmentalInformation />
-        {/* <ChatBot /> */}
       <ChatBotApp/>
+      </Route>
+      <Route path="/uploadPictures" >
+        <DevelopmentalInformation />
+      <UploadPictures/>
       </Route>
     </Router>
   )

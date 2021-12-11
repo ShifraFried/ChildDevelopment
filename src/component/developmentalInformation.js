@@ -57,6 +57,9 @@ function DevelopmentalInformation(props) {
     const chatBotRoute = () => {
         history.push("/chatBot");
     }
+    const uploadPicturesRoute = () => {
+        history.push("/uploadPictures");
+    }
     
     return <div>
         {/* wellcome {props.firstName} <br />
@@ -114,29 +117,11 @@ function DevelopmentalInformation(props) {
                     </ListItem>
                 </List>
                 <List>
-                    {/*  <ListItem button onClick={() => <div>{viewDocuments("mishkal")}</div>}>
-                        <ListItemText primary="חיסונים" />
-                       <Document
-                            file="C:/שיפי/פרויקט/project/src/assets/oneMonth.pdf">
-                        </Document> 
-                    </ListItem> */}
-                </List>
-                <List>
-                    {/*   <ListItem button onClick={() => <div>{viewDocuments("mishkal")}</div>}>
-                        <ListItemText primary="מבחנים ותרגילים" />
-                       <Document
-                            file="C:/שיפי/פרויקט/project/src/assets/oneMonth.pdf">
-                        </Document> 
-                    </ListItem> */}
-                </List>
-                <List>
-                    {/* <ListItem button onClick={() => { }}>
+                <ListItem button onClick={() =>{uploadPicturesRoute()}}>
                         <ListItemText primary="העלאת תמונות" />
-                        <Document
-                            file="C:/שיפי/פרויקט/project/src/assets/oneMonth.pdf">
-                        </Document>
-                    </ListItem> */}
+                    </ListItem>
                 </List>
+               
                 <Divider />
             </Drawer>
         </div>

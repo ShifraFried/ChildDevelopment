@@ -2,6 +2,11 @@ import React from 'react';
 import { getKey } from '../utils/ageUtils'
 import { connect } from 'react-redux';
 import detailsByAge from '../assets/detailsByAge'
+import pdf from '../assets/firstMonth.pdf'
+import { Document, Page, pdfjs } from "react-pdf";
+import { BlobProvider, PDFDownloadLink } from '@react-pdf/renderer'
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
 
 function DataExample(props) {
 
@@ -19,7 +24,10 @@ function DataExample(props) {
 
     return (
         <div>
-            <iframe width="75%" src={viewDocuments("development") } />
+            <Document file={viewDocuments("development")}  >
+                <Page pageNumber={1}></Page>
+            </Document>
+           
         </div>
     )
 }
