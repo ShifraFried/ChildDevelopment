@@ -41,6 +41,21 @@ function UploadPictures(props) {
         <div>
             <button onClick={uploadPictures} disabled={valid}>upload picture</button>
             <input type="file" onChange={(e) => saveNewPicture(e)}></input>
+            {/* {after you have an image 
+           from: https://www.npmjs.com/package/react-preview-image
+                npm install react-preview-image --save
+                import PreviewImage from './PreviewImage';
+             <PreviewImage
+          source={SOURCE}
+          index={index}
+          visible={visible}
+          indicatorStyle={indicatorStyle}
+          onHide={this.handleTriggle}
+        />
+          להשתמש בקומפוננה הזו להציג תמונה ששמורה בדטבייס 
+        כערך שך הsource   
+        } 
+                */}
         </div>
     )
 }

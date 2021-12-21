@@ -1,10 +1,10 @@
 import { createChatBotMessage } from "react-chatbot-kit";
-import Overview from "../chatBot/widget/overview"
+import Overview from "./widget/overview"
 import VaccineChatBot from "./widget/vaccineChatBot";
 import SleepChatBot from "./widget/sleepChatBot";
-import LocalStatistics from "../chatBot/widget/localStatistic";
-import Contact from "../chatBot/widget/contact";
-import MedicineDelivery from "../chatBot/widget/medicineDelivery"
+import LocalStatistics from "./widget/localStatistic";
+import Contact from "./widget/contact";
+import MedicineDelivery from "./widget/medicineDelivery"
 import CoBotAvatar from "./coBotAvatar"
 
 const config = {

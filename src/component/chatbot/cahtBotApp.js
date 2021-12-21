@@ -4,9 +4,9 @@ import MetaTags from "react-meta-tags";
 import Fade from "react-reveal/Fade";
 import Flip from "react-reveal/Flip";
 import Chatbot from "react-chatbot-kit";
-import config from "../chatBot/chatBotConfig";
-import MessageParser from "../chatBot/messageParser";
-import ActionProvider from "../chatBot/actionProvider";
+import config from "./chatBotConfig";
+import MessageParser from "./messageParser";
+import ActionProvider from "./actionProvider";
 
 export default function ChatBotApp() {
   const [showBot, toggleBot] = useState(false);

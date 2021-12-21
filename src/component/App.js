@@ -3,13 +3,13 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css';
 import Home from './home.js'
 import Login from './login/login'
-import Signup from "./login/signup.js";
+import Signup from "./login/signUp.js";
 import DevelopmentalInformation from "./developmentalInformation.js"
 import HeightWeight from "./heightWeight.js"
 import WightHistory from "./weightHistory.js"
 import DataExample from "./dataExample.js"
 import Vaccine from "./vaccine.js"
-import ChatBotApp from "./chatBot/cahtBotApp"
+import ChatBotApp from "./chatbot/cahtBotApp.js"
 import UploadPictures from "./uploadPictures"
 
 
