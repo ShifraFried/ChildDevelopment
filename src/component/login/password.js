@@ -62,7 +62,7 @@ const Password = (props)=>{
     
         const passwordValidator = (p) => {
             //regulation 
-            console.log(p,"passwordpasswordpassword");
+            // console.log(p,"passwordpasswordpassword");
             // console.log(password,">>>>>>>>>>>>>>>>>>>>>>>>>>>");
             if (p.length !== 6) {
                 setValid(true)
@@ -77,7 +77,7 @@ const Password = (props)=>{
         const onChangeHandle = (e) => {
             const tmp = e.target.value;
             // setPassword(tmp);
-            console.log(tmp,"tmp");
+            // console.log(tmp,"tmp");
             // console.log(password,"setpassword");
             passwordValidator(tmp);
         }

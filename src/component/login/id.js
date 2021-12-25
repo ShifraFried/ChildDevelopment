@@ -19,7 +19,7 @@ const Id = (props)=>{
     
         const idValidator = (id) => {
             //regulation 
-            console.log(id,"idididid");
+            // console.log(id,"idididid");
             if (id.length !== 9) {
                 setValid(true)
                 setMessage('you need enter only 9 chars')
