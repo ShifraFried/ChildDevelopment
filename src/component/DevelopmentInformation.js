@@ -4,9 +4,10 @@ import { connect } from 'react-redux';
 import detailsByAge from '../assets/detailsByAge'
 import { Document, Page, pdfjs } from "react-pdf";
 import { useHistory } from "react-router-dom";
+import "./DevelopmentInformation.css"
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
-function DevelopmentalInformation(props) {
+function DevelopmentInformation(props) {
     function getFileByKey(key) {
         console.log(detailsByAge[key]);
         return detailsByAge[key];
@@ -24,7 +25,7 @@ function DevelopmentalInformation(props) {
     }
 
     return (
-        <div>
+        <div className='docData'>
             <Document file={viewDocuments("development")}  >
                 <Page pageNumber={1}></Page>
             </Document>
@@ -37,4 +38,4 @@ const mapStateToProps = (({ user }) => {
     return { birthDate: user.birthDate, firstName: user.firstName }
 })
 
-export default connect(mapStateToProps)(DevelopmentalInformation)
+export default connect(mapStateToProps)(DevelopmentInformation)

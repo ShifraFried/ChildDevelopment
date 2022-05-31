@@ -41,7 +41,7 @@ function Vaccine(props) {
                         <br /><br /></div></div>
             </div>)
         }
-        {( vaccines == null || vaccines.length==0) ? <div>קבלת את כל החיסונים לגיל זה</div> : <div></div>}
+        {( vaccines == null || vaccines.length==0) ? <div  className='vaccineMessage'>קבלת את כל החיסונים לגיל זה</div> : <div></div>}
     </div>
 }
 

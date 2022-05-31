@@ -114,4 +114,65 @@
   .app-chatbot-button-icon {
     fill: #fff;
   }
-  
+
+
+  .react-chatbot-kit-chat-inner-container{
+    width: 420px !important;
+  }
+  .react-chatbot-kit-chat-message-container{
+    overflow-y: scroll !important;
+    height: 300px !important;
+
+}
+
+ .react-chatbot-kit-chat-bot-message{
+      background-color: grey !important;
+}
+
+
+
+.option-item {
+    border: 1px solid #EE2A7B !important;
+    color: #EE2A7B !important;
+    box-shadow: inset 0px 0px 0px #EE2A7B !important;
+}
+
+
+.react-chatbot-kit-chat-message-container{
+  background-image: "url('../../../../assets/frame/logo.png')" !important;
+}
+.react-chatbot-kit-chat-header{
+  color: #fff!important;
+  height: 40px;
+  background-color: #337DFF !important;
+  border-bottom-color: black !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px 6px 0px 0px;
+}
+
+.react-chatbot-kit-chat-input{
+height: 32px;
+width: 100%;
+bottom: 0;
+}
+
+.react-chatbot-kit-chat-btn-send{
+  margin-top: -31px;
+  margin-left: 378px;
+  height: 31px;
+  background: white !important;
+  border-color: aliceblue;
+} 
+
+
+
+
+
+
+
+
+
+
+

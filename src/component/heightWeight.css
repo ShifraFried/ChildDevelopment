@@ -1,0 +1,78 @@
+
+.formHW{
+   background-image: url('../assets/frame/h&w.jpg') !important;
+    background-position: center center;
+    background-repeat: no-repeat;
+     height: 450px;
+    width: 725px;
+    position: relative;
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    border-color: grey;
+    display: inline-block;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 10px grey;
+     box-shadow: 0 0 10px grey; 
+     margin-top: 80px !important;
+
+}
+
+
+.inputForm{ 
+    width: 220px !important;
+}
+
+.dataForm{
+         margin-top: 25px !important;
+}
+
+.titleForm{
+    color: #20B8F1;
+}
+
+.buttonForm{
+    width: 150px !important;
+    background-color: #EFD700 !important;
+    box-shadow: -3px 1px 10px rgba(0, 0, 0, 0.12) !important;
+    border-radius: 76.5px !important;
+    color: black !important;
+}
+
+.linkForm{
+    color: blue;
+}
+
+
+.tableHistory{
+    width: 50%;
+    margin-left: 25%;
+}
+.titleHistory{
+  font-size: 25px!important;
+ margin-top:70px !important;
+ margin-bottom: 20px;
+ color: cornflowerblue;
+ font-family: system-ui;
+}
+tr{
+    height: 60px;
+}
+
+.iconTitle{
+    padding-left: 4px !important;
+}
+
+.iconTitle1{
+    padding-left: 6px !important; 
+}
+
+.tableCss{
+    border: 1px solid;
+    border-bottom-color: cornflowerblue !important;
+}
+
+td{
+    font-family: system-ui;
+}
+

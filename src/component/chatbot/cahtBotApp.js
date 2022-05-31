@@ -7,6 +7,7 @@ import Chatbot from "react-chatbot-kit";
 import config from "./chatBotConfig";
 import MessageParser from "./messageParser";
 import ActionProvider from "./actionProvider";
+import "./style.css"
 
 export default function ChatBotApp() {
   const [showBot, toggleBot] = useState(false);

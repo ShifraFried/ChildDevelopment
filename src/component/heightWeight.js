@@ -6,6 +6,7 @@ import { putWeight, putBornWeight, logInServer } from "./api/userApi"
 import moment from 'moment'
 import { Link } from 'react-router-dom';
 import { saveFirstName, saveLastName, saveId, saveEmail, savePassword, saveWeightBorn, saveBirthDate, saveIdFromMongo } from '../actions/index'
+import './heightWeight.css'
 
 function HeightWeight(props) {
 
@@ -127,15 +128,18 @@ function HeightWeight(props) {
         }
     }
     return (
-        <form>
-            <div>הכנסת פרטי גובה ומשקל</div><br></br>
-            <TextField id="outlined-basic" label="height" variant="outlined" type="number" /><br></br>
-            {!props.weightBorn.weight && <div><TextField id="outlined-basic" label="weight born" variant="outlined" type="number" error={valid} onChange={onChangeHandleBorn} helperText={message} /><br /></div>}
+        <div className='formHW'>
+        <form className='dataForm'>
+            <div className='titleForm'>הכנסת פרטי גובה ומשקל</div><br></br>
+            <TextField  id="outlined-basic" label="height" variant="outlined" type="number" /><br></br>
+            {/* {!props.weightBorn.weight && <div><TextField id="outlined-basic" label="weight born" variant="outlined" type="number" error={valid} onChange={onChangeHandleBorn} helperText={message} /><br /></div>} */}
+            <TextField id="outlined-basic" label="weight born" variant="outlined" type="number" error={valid} onChange={onChangeHandleBorn} helperText={message} /><br></br>
+
             <TextField id="outlined-basic" label="weight" variant="outlined" type="number" error={valid} onChange={onChangeHandle} helperText={message} /><br></br>
-            <TextField id="outlined-basic" label="date" variant="outlined" type="date" onChange={onChanceDate} /><br></br>
-            <Button variant="outlined" color="secondary" onClick={putWeightToServer}>חישוב </Button><br></br>
-            <Link to="weightHistory">היסטורית הגדילה שלי /</Link>
-        </form>
+            <TextField  id="outlined-basic" label="date" variant="outlined" type="date" onChange={onChanceDate} className="inputForm" /><br></br>
+            <Button variant="outlined" className='buttonForm' onClick={putWeightToServer}>חישוב </Button><br></br>
+            <Link className='linkForm' to="weightHistory">היסטורית הגדילה שלי</Link>
+        </form></div>
     )
 }
 

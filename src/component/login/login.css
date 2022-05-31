@@ -4,3 +4,62 @@ form {
     flex-direction: column;
     font-size: larger
 }
+
+.buttonLogin {
+   margin-top: -22px!important;
+   width: 187px;
+   height: 40px;
+   background: #EFD700;
+   box-shadow: -3px 1px 10px rgba(0, 0, 0, 0.12);
+   border-radius: 76.5px;
+   color: black;
+}
+
+.loginForm{
+background-image: url('../../assets/frame/Frame3.png');
+background-position: center center;
+background-repeat: no-repeat;
+height: 70vh;
+margin-top: 60px;
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+
+
+
+.inputDate{
+    width: 220px;
+}
+.signUpForm{
+    background-image: url('../../assets/frame/Frame2.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+
+.lodinTitle{
+    color: #64C34C;
+}
+.fileds{
+    margin-top: 25px;
+}
+
+
+.loginInfo{
+    margin-top: 20px;
+}
+
+.MuiInputBase-input {
+    height: 0.5em !important;
+    padding: 6px 0 7px;
+}
+
+.titleSign{
+    margin-bottom: -20px;
+}
+

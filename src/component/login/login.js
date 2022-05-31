@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TextField } from '@material-ui/core';
 import { Button } from '@material-ui/core';
 import { useHistory } from "react-router-dom";
@@ -7,6 +7,7 @@ import "./login.css"
 import { logInServer } from '../api/userApi'
 import { connect } from "react-redux";
 import { saveFirstName, saveLastName, saveId, saveEmail, savePassword, saveWeightBorn, saveBirthDate, saveIdFromMongo } from '../../actions/index'
+import ImageBackground from "../../assets/frame/Frame3.png"
 
 function Login(props) {
     const [Id, setId] = useState('');
@@ -29,6 +30,9 @@ function Login(props) {
     const clcAge = (birthDate) => {
         return moment.duration(moment(new Date()).diff(birthDate));
     }
+  useEffect(() => {
+        document.body.style.backgroundImage = "none";
+    }, []);
     const EnterMenu = async () => {
         try {
             const user = await logInServer(Id, Password);
@@ -56,12 +60,16 @@ function Login(props) {
         }
     }
     return (
-        <form>
-            <div>התחברות</div><br></br>
-            <TextField id="outlined-basic" label="id" variant="outlined" onChange={(e) => setId(e.target.value)} /><br></br>
-            <TextField id="outlined-basic" label="password" variant="outlined" type="password" onChange={(e) => setPassword(e.target.value)} /><br></br>
-            <Button variant="outlined" color="secondary" onClick={EnterMenu}>צפייה במידע התפתחותי</Button>
-        </form>
+        <div>
+            <div className='loginForm'>
+                <form className='loginInfo'>
+
+                    <div className='lodinTitle'>התחברות</div><br></br>
+                    <TextField id="outlined-basic" label="id" variant="outlined" onChange={(e) => setId(e.target.value)} /><br></br>
+                    <TextField id="outlined-basic" label="password" variant="outlined" type="password" onChange={(e) => setPassword(e.target.value)} /><br></br>
+                    <Button variant="outlined" color="secondary" onClick={EnterMenu}>צפייה במידע התפתחותי</Button>
+                </form></div>
+        </div>
     )
 }
 

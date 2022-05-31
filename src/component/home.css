@@ -1,7 +1,9 @@
-.btn {
-    text-align: center
-}
-
+/* .btn
+{
+    text-align: center;
+    margin-left: 500px;
+ 
+} */
 /* button{
     position: absolute;
     background: #EFD700;
@@ -16,16 +18,24 @@
 
 color: #000000;
 } */
-.signup {
+.signup{
     width: 187px;
     height: 53px;
     left: 453px;
     top: 112px;
-}
+    margin-right: 20px;
+    margin-top: 600px;
+    background: #EFD700;
+    border: 0ch;
+    border-radius: 76.5px;
 
-.login {
-    width: 180px;
-    height: 53px;
-    left: 246px;
-    top: 110px;
+}
+.login{
+width: 180px;
+height: 53px;
+left: 246px;
+top: 110px;
+background: #EFD700;
+border: 0ch;
+border-radius: 76.5px;
 }

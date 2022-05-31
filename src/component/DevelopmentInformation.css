@@ -1,0 +1,18 @@
+ .react-pdf__Page {
+    padding-left: 34.5% !important;
+
+
+}
+
+.react-pdf__Document{
+    background-image: url('../assets/frame/DataE.JPG') !important;
+    background-position: center;
+    background-repeat: no-repeat;
+} 
+
+.docData{
+    margin-right: 16%;
+    margin-top:-6%;
+}
+
+

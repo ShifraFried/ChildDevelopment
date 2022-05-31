@@ -7,7 +7,7 @@ import Signup from "./login/signUp.js";
 import Menu from "./Menu.js"
 import HeightWeight from "./heightWeight.js"
 import WightHistory from "./weightHistory.js"
-import DevelopmentalInformation from "./DevelopmentalInformation.js"
+import DevelopmentalInformation from "./DevelopmentInformation.js"
 import Vaccine from "./vaccine.js"
 import ChatBotApp from "./chatbot/cahtBotApp.js"
 import UploadPictures from "./uploadPictures/uploadPictures"
@@ -51,7 +51,6 @@ const MenuRoute = () => {
       </Route>
       <Route path="/weightHistory" >
         <Menu />
-        <HeightWeight />
         <WightHistory />
       </Route>
       <Route path="/DevelopmentalInformation" >

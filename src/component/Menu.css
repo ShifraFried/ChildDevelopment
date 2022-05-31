@@ -1,4 +1,4 @@
-.devInfo {
+/* .devInfo {
     position: absolute;
     left: 94.51%;
     right: 3.57%;
@@ -14,4 +14,53 @@
     top: 21.27%;
     bottom: 77%;
     border: 1.5px solid #EE2A7B;
+} */
+
+.imageBar{
+    width: 35%;
 }
+
+.MuiDrawer-paper {
+    top: 0;
+    flex: 1 0 auto;
+     height: 100% !important;
+    display: flex;
+    outline: 0;
+    z-index: 1200;
+    position: fixed;
+    overflow-y: auto;
+    flex-direction: column;
+    -webkit-overflow-scrolling: none;
+    margin-top: 200px;
+    height: 313px !important;
+}
+
+.MuiTypography-displayBlock {
+    font-family: system-ui !important;
+    display: block;
+}
+
+.itemBar{
+    background: #F5F5F5 !important;
+    margin-right: 200px !important;
+    text-align: center !important;
+}
+
+.MuiList-padding {
+    padding-top: 8px;
+    padding-bottom: 0px !important;
+}
+
+
+.makeStyles-drawerPaper-10 {
+    width: 240px;
+}
+
+
+
+
+
+
+
+
+
