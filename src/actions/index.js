@@ -5,18 +5,17 @@ export const saveFirstName = (firstName) => {
     };
 };
 
+
 export const saveLastName = (lastName) => {
     return function (dispatch) {
         dispatch({ type: "save_lastName", payload: lastName });
     };
 };
-
 export const saveId = (id) => {
     return function (dispatch) {
         dispatch({ type: "save_id", payload: id });
     };
 };
-
 export const saveEmail = (email) => {
     return function (dispatch) {
         dispatch({ type: "save_email", payload: email });

@@ -12,6 +12,7 @@ export default function ChatBotApp() {
   const [showBot, toggleBot] = useState(false);
 
   return (
+    
     <div className="App">
       <MetaTags>
         <title> Develope-Information-Chatbot </title>
@@ -33,6 +34,12 @@ export default function ChatBotApp() {
           </div>
         </Fade>
       )}
+
+
+
+
+
+
       <Flip left cascade>
         <button
           className="app-chatbot-button"

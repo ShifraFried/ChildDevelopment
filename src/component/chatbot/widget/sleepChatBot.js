@@ -5,9 +5,13 @@ const SleepChatBot = (props) => {
     const [stats, setStats] = useState([]);
     const [loading, setLoading] = useState(true);
 
+
     const questionSleep = [{
+
         name: "הכנות לשינה",
+        
         handler: props.actionProvider.preparationsForSleep,
+        
         id: 1
     },
     {

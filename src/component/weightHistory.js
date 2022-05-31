@@ -4,7 +4,7 @@ import moment from 'moment'
 
 
 function weightHistory(props) {
-
+    
     // const str = (ageHistory) => {
     //     let age = moment.duration(ageHistory)
     //     let str = [{

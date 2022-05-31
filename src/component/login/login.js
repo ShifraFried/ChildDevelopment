@@ -12,8 +12,6 @@ function Login(props) {
     const [Id, setId] = useState('');
     const [Password, setPassword] = useState('');
 
-    const { firstName, lastName, id, email, password, weightHistory, birthDate,_id } = props;
-
     const history = useHistory();
 
     const saveInRedux = (user) => {
@@ -27,11 +25,11 @@ function Login(props) {
         props.saveIdFromMongo(user._id)
     }
 
+
     const clcAge = (birthDate) => {
         return moment.duration(moment(new Date()).diff(birthDate));
     }
-
-    const developmentalInformation = async () => {
+    const EnterMenu = async () => {
         try {
             const user = await logInServer(Id, Password);
             console.log('u', user);
@@ -49,7 +47,7 @@ function Login(props) {
                 alert("שלום  " + name + "הגיל שלך " + age._data.days + " ימים ");
             }
             saveInRedux(user.result);
-            return history.push("/developmentalInformation");
+            return history.push("/Menu");
         }
         catch (error) {
             console.log(error);
@@ -57,16 +55,16 @@ function Login(props) {
             return history.push('/signup')
         }
     }
-
     return (
         <form>
             <div>התחברות</div><br></br>
             <TextField id="outlined-basic" label="id" variant="outlined" onChange={(e) => setId(e.target.value)} /><br></br>
             <TextField id="outlined-basic" label="password" variant="outlined" type="password" onChange={(e) => setPassword(e.target.value)} /><br></br>
-            <Button variant="outlined" color="secondary" onClick={developmentalInformation}>צפייה במידע התפתחותי</Button>
+            <Button variant="outlined" color="secondary" onClick={EnterMenu}>צפייה במידע התפתחותי</Button>
         </form>
     )
 }
+
 
 const mapStateToProps = ({ user }) => {
     return {

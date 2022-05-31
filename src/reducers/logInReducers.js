@@ -8,9 +8,7 @@ const initialState = {
     birthDate: "",
     _id:"",
 }
-
 export const userReducer = (state = initialState, action) => {
-
     switch (action.type) {
         case "save_firstName":
             return { ...state, firstName: action.payload };
@@ -28,10 +26,10 @@ export const userReducer = (state = initialState, action) => {
             return { ...state, birthDate: action.payload };
         case ("save_id_mongo"):
             return { ...state, _id: action.payload };
-
         default:
             return state;
     }
 }
+
 
 

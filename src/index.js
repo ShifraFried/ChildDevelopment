@@ -9,6 +9,7 @@ import reducer from './reducers/index';
 import thunk from "redux-thunk";
 
 const store = createStore(reducer, applyMiddleware(thunk));
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
@@ -17,6 +18,8 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

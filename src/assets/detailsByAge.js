@@ -1,6 +1,5 @@
-
-import firstMonth from '../assets/firstMonth.pdf'
 import p from '../assets/p.pdf'
+import firstMonth from '../assets/firstMonth.pdf'
 
 export default {
     "1": {

@@ -7,7 +7,6 @@ class MessageParser {
     parse(message) {
       message = message.toLowerCase();
       console.log(message);
-  
       //מטפל במה שיכתוב המשמתמש בתיבת טקסט 
       if (
         message.includes("options") ||
@@ -16,7 +15,6 @@ class MessageParser {
       ) {
         return this.actionProvider.handleOptions({ withAvatar: true });
       }
-  
       //ניתן אפשרות של כתיבת טקסט חופשי לגבי השלמת חיסונים
       if (
         message.includes("complete") ||
@@ -27,7 +25,6 @@ class MessageParser {
       ) {
         return this.actionProvider.completeVaccine();
       }
-  
       if (
         message.includes("חיסונים") ||
         message.includes("vaccine") ||
@@ -35,27 +32,23 @@ class MessageParser {
       ) {
         return [
           this.actionProvider.handleChatBotVaccine(),
-          // this.actionProvider.handleLocalStats()
         ];
       }
-  
       if (message.includes("תופעות לוואי") || message.includes("חום ")
       || message.includes("אודם ")  || message.includes("נפיחות ")) {
         return this.actionProvider.vaccineSideEffects();
-      }
-  
+      }     
       if (
-        message.includes("joke") ||
-        message.includes("jokes") ||
-        message.includes("funny")
+        message.includes("שינה") ||
+        message.includes("sleep") ||
+        message.includes("quiet")||
+        message.includes("ישן")
       ) {
-        return this.actionProvider.handleJoke();
+        return this.actionProvider.handleChatBotSleep();
       }
-  
       if (message.includes("thanks") || message.includes("thank you")) {
         return this.actionProvider.handleThanks();
       }
-  
       return this.actionProvider.handleOptions({ withAvatar: true });
     }
   }

@@ -12,16 +12,6 @@ const GeneralOptions = (props) => {
       handler: props.actionProvider.handleChatBotSleep,
       id: 2
     },
-    // {
-    //   name: "Emergency contact",
-    //   handler: props.actionProvider.handleContact,
-    //   id: 3
-    // },
-    // {
-    //   name: "Clinical medicine delivery",
-    //   handler: props.actionProvider.handleMedicine,
-    //   id: 4
-    // }
   ];
   return <Options options={options} title="Options" {...props} />;
 };

@@ -17,7 +17,7 @@ function HeightWeight(props) {
     const [date, setDate] = useState(Date.now());
 
     const [weightBorn, setWeightBorn] = useState(0);
-
+    
     const weightValidator = (weight) => {
         //regulation 
         if (weight == 0) {
@@ -32,7 +32,6 @@ function HeightWeight(props) {
             setValid(false)
             setMessage('')
         }
-
     }
     const saveInRedux = (user) => {
         props.saveFirstName(user.firstName)
@@ -106,14 +105,13 @@ function HeightWeight(props) {
     const putWeightToServer = async () => {
         let age = (moment(date).diff(props.birthDate));
         if (props.weightBorn.weight && weight) {
-            const user = await putWeight(props.id, age, weight, date).then((u) => {
-                    //u == undefined
-                console.log(u,"user");
-                calc(age);
-                alert("HeightWeight")
-                // logInServer(props.id, props.password)
-                saveInRedux(u);
-            }).catch((error) => { console.log(error) })
+            const user = await putWeight(props.id, age, weight, date)
+            console.log(user, "user");
+            calc(age);
+            saveInRedux(user);
+            alert("HeightWeight")
+            // logInServer(props.id, props.password)
+            // }).catch((error) => { console.log(error) })
         }
         else if (weight && weightBorn) {
             saveWeightBorn(weightBorn);
@@ -144,7 +142,7 @@ function HeightWeight(props) {
 const mapStateToProps = (({ user }) => {
     // console.log(user);
     // console.log(user.weightHistory[0]);
-    return { id: user._id, birthDate: user.birthDate, weightBorn: user.weightHistory[0] }
+    return { id: user._id, birthDate: user.birthDate, weightBorn: user.weightHistory[0], weightHistory: user.weightHistory }
 })
 
 export default connect(mapStateToProps, { saveFirstName, saveLastName, saveId, saveEmail, savePassword, saveWeightBorn, saveBirthDate, saveIdFromMongo })(HeightWeight);

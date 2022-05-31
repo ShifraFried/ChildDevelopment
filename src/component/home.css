@@ -1,7 +1,7 @@
-.btn
-{
+.btn {
     text-align: center
 }
+
 /* button{
     position: absolute;
     background: #EFD700;
@@ -16,15 +16,16 @@
 
 color: #000000;
 } */
-.signup{
+.signup {
     width: 187px;
     height: 53px;
     left: 453px;
     top: 112px;
 }
-.login{
-width: 180px;
-height: 53px;
-left: 246px;
-top: 110px;
+
+.login {
+    width: 180px;
+    height: 53px;
+    left: 246px;
+    top: 110px;
 }

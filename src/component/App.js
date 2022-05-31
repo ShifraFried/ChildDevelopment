@@ -4,14 +4,13 @@ import './App.css';
 import Home from './home.js'
 import Login from './login/login'
 import Signup from "./login/signUp.js";
-import DevelopmentalInformation from "./developmentalInformation.js"
+import Menu from "./Menu.js"
 import HeightWeight from "./heightWeight.js"
 import WightHistory from "./weightHistory.js"
-import DataExample from "./dataExample.js"
+import DevelopmentalInformation from "./DevelopmentalInformation.js"
 import Vaccine from "./vaccine.js"
 import ChatBotApp from "./chatbot/cahtBotApp.js"
-import UploadPictures from "./uploadPictures"
-
+import UploadPictures from "./uploadPictures/uploadPictures"
 
 
 function App() {
@@ -34,45 +33,42 @@ function App() {
           </Route>
         </Switch>
       </Router>
-
-      {/* <header className="App-header">
-        <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser} />
-      </header> */}
-
     </div>
   );
 }
+
+
 const MenuRoute = () => {
   return (
+
     <Router>
-      <DevelopmentalInformation />
-      <Route path="/developmentalInformation" >
-        <h1>developmentalInformation</h1>
+      <Menu />
+      <Route path="/Menu" >
       </Route>
       <Route path="/HeightWeight" >
-        <DevelopmentalInformation />
+        <Menu />
         <HeightWeight />
       </Route>
       <Route path="/weightHistory" >
-        <DevelopmentalInformation />
+        <Menu />
         <HeightWeight />
         <WightHistory />
       </Route>
-      <Route path="/dataExample" >
+      <Route path="/DevelopmentalInformation" >
+        <Menu />
         <DevelopmentalInformation />
-        <DataExample />
       </Route>
       <Route path="/vaccine" >
-        <DevelopmentalInformation />
+        <Menu />
         <Vaccine />
       </Route>
       <Route path="/chatBot" >
-        <DevelopmentalInformation />
-      <ChatBotApp/>
+        <Menu />
+        <ChatBotApp />
       </Route>
       <Route path="/uploadPictures" >
-        <DevelopmentalInformation />
-      <UploadPictures/>
+        <Menu />
+        <UploadPictures />
       </Route>
     </Router>
   )

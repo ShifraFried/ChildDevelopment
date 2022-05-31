@@ -7,18 +7,28 @@ import Email from './email';
 import Password from './password';
 import Id from './id';
 import { connect } from "react-redux";
-import { saveFirstName, saveLastName, saveBirthDate,saveWeightBorn, saveAllFiled } from '../../actions/index'
+import { saveFirstName, saveLastName, saveBirthDate, saveWeightBorn, saveAllFiled } from '../../actions/index'
 import { signUpServer } from '../api/userApi'
 
 
 function Signup(props) {
     const history = useHistory();
-    const { firstName, lastName, id, email, password, weightHistory,birthDate, canSignup } = props;
+    const { firstName, lastName, id, email, password, weightHistory, birthDate, canSignup } = props;
 
-    const signUp = () => {
-        signUpServer(firstName, lastName, id, email, password,weightHistory, birthDate)
-        alert("הרישום בוצע בהצלחה!! !!")
-        history.push("/login");
+    const signUp = async () => {
+        let child = await signUpServer(firstName, lastName, id, email, password, weightHistory, birthDate)
+            .then((data) => {
+                // if (data != undefined) {
+                    console.log(data, "data");
+                    alert("הרישום בוצע בהצלחה!! !!")
+                    history.push("/login");
+                // }
+            }
+            ).catch((err) => {
+                console.log(err, "err");
+                alert("err")
+                history.push("/")
+            })
     }
 
     const handlerSaveFirstName = (Fname) => {
@@ -33,7 +43,7 @@ function Signup(props) {
     const handlerSaveWeightBorn = (weightB) => {
         props.saveWeightBorn(weightB)
     }
-    
+
     return (
         <form>
             <div >הכנסת פרטי הילד</div><br></br>
@@ -42,7 +52,7 @@ function Signup(props) {
             <Id /><br /><br />
             <Email /><br />
             <Password /><br />
-            <TextField id="outlined-basic" label="weight born" variant="outlined" type="number"  onChange={(e) => { handlerSaveWeightBorn(e.target.value) }} /><br></br>
+            <TextField id="outlined-basic" label="weight born" variant="outlined" type="number" onChange={(e) => { handlerSaveWeightBorn(e.target.value) }} /><br></br>
             <TextField id="outlined-basic" label="birthDate" variant="outlined" type="date" onChange={(e) => { handlerSaveBirthDate(e.target.value) }} /><br></br>
             <Button variant="outlined" color="secondary" disabled={canSignup} onClick={signUp} >רישום</Button>
         </form>
@@ -62,4 +72,4 @@ const mapStateToProps = ({ user }) => {
 
 };
 
-export default connect(mapStateToProps, { saveFirstName, saveLastName, saveBirthDate ,saveWeightBorn})(Signup);
+export default connect(mapStateToProps, { saveFirstName, saveLastName, saveBirthDate, saveWeightBorn })(Signup);

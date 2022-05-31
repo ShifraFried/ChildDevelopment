@@ -83,7 +83,7 @@ const Password = (props)=>{
         }
     
     
-        return <TextField id="outlined-basic" label="password" variant="outlined"  error={valid} onChange={onChangeHandle} helperText={message} />
+        return <TextField id="outlined-basic" label="password" variant="outlined" type="password" error={valid} onChange={onChangeHandle} helperText={message} />
     }
    
     const mapStateToProps = (state) => {

@@ -16,9 +16,10 @@ function Vaccine(props) {
             .catch(err => { })
     }, []);
 
-    const updateAndGetRecordVaccine = async (childId, vaccineId) => {
+    
+    const updateAndGetRecordVaccine = async (childId, vaccineId,VaccineName) => {
         await updateRecordVaccine(childId, vaccineId).then(data => {
-            // alert("after update");
+             alert("האם באמת התחסנת נגד"+VaccineName);//לשנות לכפתור כן .לא 
             console.log(data);
             getChildVaccine(childId).then(data => {
                 console.log(data);
@@ -34,7 +35,7 @@ function Vaccine(props) {
                     <div>עדיין לא חוסנת ב<div >{vacc.vaccineName} <br />
                         {(vacc.minAge.length == 1) ? <div></div> : <div>חסרות {vacc.minAge.length} מנות</div>
                         }
-                        <button onClick={() => { updateAndGetRecordVaccine(props.id, vacc._id) }}>התחסנתי</button><br /><br />
+                        <button onClick={() => { updateAndGetRecordVaccine(props.id, vacc._id,vacc.vaccineName) }}>התחסנתי</button><br /><br />
                         <Link>?מדוע חשוב לקבל את החיסון</Link>
                     </div>
                         <br /><br /></div></div>
