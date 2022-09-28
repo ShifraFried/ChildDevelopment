@@ -6,12 +6,13 @@ import { postPicture } from '../api/pictureApi'
 
 const UploadPictures = (props) => {
     const [myPictures, setMyPictures] = useState('');
-    const { fileData, onfileChange } = UseUploadFile()
+    const { fileData, onfileChange } = UseUploadFile();
 
     const uploadPictures = async (id, myPictures) => {
         console.log("in uploadPictures");
-        await postPicture({ id: props.id, myPictures: fileData });
-
+        await postPicture({ id: props.id, myPictures: fileData }).then(() => {
+            console.log("AAAAAAAAAAAAAAAA")
+        });
     }
 
     return (
@@ -19,7 +20,6 @@ const UploadPictures = (props) => {
             <input type="file" className="a d" onChange={onfileChange}></input>
             <Button variant="outlined" color="secondary" onClick={() => uploadPictures(myPictures)} >upload picture</Button>
         </div>
-
     )
 }
 

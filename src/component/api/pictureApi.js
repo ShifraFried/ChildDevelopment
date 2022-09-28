@@ -2,8 +2,7 @@
 //לסדר פונקציה
 export const postPicture = async (data) => {
   console.log(data, "data");
-  //נפילה בשורה זו
-  await fetch('http://localhost:3000/', {
+  await fetch('http://localhost:3000/postPicture', {
     method: 'POST',
     headers: {
       Accept: 'application/json',

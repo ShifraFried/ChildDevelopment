@@ -11,6 +11,7 @@ import DevelopmentalInformation from "./DevelopmentInformation.js"
 import Vaccine from "./vaccine.js"
 import ChatBotApp from "./chatbot/cahtBotApp.js"
 import UploadPictures from "./uploadPictures/uploadPictures"
+import VaccineStyle from "./vaccineStyle"
 
 
 function App() {
@@ -57,9 +58,13 @@ const MenuRoute = () => {
         <Menu />
         <DevelopmentalInformation />
       </Route>
-      <Route path="/vaccine" >
+      {/* <Route path="/vaccine" >
         <Menu />
         <Vaccine />
+      </Route> */}
+       <Route path="/vaccine" >
+        <Menu />
+        <VaccineStyle />
       </Route>
       <Route path="/chatBot" >
         <Menu />
