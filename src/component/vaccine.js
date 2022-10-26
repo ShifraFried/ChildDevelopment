@@ -20,7 +20,7 @@ function Vaccine(props) {
 
     const updateAndGetRecordVaccine = async (childId, vaccineId, VaccineName) => {
         await updateRecordVaccine(childId, vaccineId).then(data => {
-            alert("האם באמת התחסנת נגד" + VaccineName);//לשנות לכפתור כן .לא 
+            // alert("האם באמת התחסנת נגד" + VaccineName);//לשנות לכפתור כן .לא 
             console.log(data);
             getChildVaccine(childId).then(data => {
                 console.log(data);

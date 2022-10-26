@@ -58,14 +58,14 @@ const MenuRoute = () => {
         <Menu />
         <DevelopmentalInformation />
       </Route>
-      {/* <Route path="/vaccine" >
+      <Route path="/vaccine" >
         <Menu />
         <Vaccine />
-      </Route> */}
-       <Route path="/vaccine" >
+      </Route>
+       {/* <Route path="/vaccine" >
         <Menu />
         <VaccineStyle />
-      </Route>
+      </Route> */}
       <Route path="/chatBot" >
         <Menu />
         <ChatBotApp />
